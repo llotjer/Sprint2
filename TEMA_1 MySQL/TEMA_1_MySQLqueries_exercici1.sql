@@ -64,8 +64,7 @@ SELECT p.nombre AS 'nom professor' FROM profesor pr LEFT JOIN departamento d ON 
 SELECT d.nombre AS 'nom dept' FROM departamento d LEFT JOIN profesor pr ON pr.id_departamento = d.id WHERE pr.id_departamento IS NULL;
 SELECT p.nombre AS 'nom professor' FROM profesor pr LEFT JOIN asignatura a ON a.id_profesor = pr.id_profesor JOIN persona p ON p.id = pr.id_profesor WHERE a.id_profesor IS NULL;
 SELECT a.nombre AS 'nom assignatura' FROM asignatura a LEFT JOIN profesor pr ON pr.id_profesor = a.id_profesor WHERE a.id_profesor IS NULL;
-
--- Retorna un llistat amb tots els departaments que no han impartit assignatures en cap curs escolar.
+SELECT DISTINCT d.nombre AS 'nom dept' FROM departamento d LEFT JOIN profesor pr ON pr.id_departamento = d.id LEFT JOIN asignatura a ON a.id_profesor = pr.id_profesor LEFT JOIN alumno_se_matricula_asignatura asma ON asma.id_asignatura = a.id WHERE asma.id_curso_escolar IS NULL AND a.id IS NULL;
 
 # CONSULTES RESUM
 
@@ -81,10 +80,13 @@ SELECT pr.id_profesor AS 'id professor', p.nombre AS 'nom professor', p.apellido
 SELECT * FROM persona p WHERE p.tipo = 'alumno' ORDER BY p.fecha_nacimiento DESC LIMIT 1;
 SELECT p.nombre AS 'nom professor amb dept però no assignatura' FROM persona p JOIN profesor pr ON pr.id_profesor = p.id JOIN departamento d ON d.id = pr.id_departamento LEFT JOIN asignatura a ON a.id_profesor = pr.id_profesor WHERE a.id IS NULL AND d.id IS NOT NULL;
 
--- SELECT * FROM alumno_se_matricula_asignatura;
--- SELECT * FROM asignatura;
--- SELECT * FROM curso_escolar;
--- SELECT * FROM departamento;
--- SELECT * FROM grado;
--- SELECT * FROM persona;
--- SELECT * FROM profesor;
+
+SELECT DISTINCT d.nombre AS 'nom dept' FROM profesor pr LEFT JOIN asignatura a ON a.id_profesor = pr.id_profesor JOIN departamento d ON d.id = pr.id_departamento;
+
+SELECT * FROM alumno_se_matricula_asignatura;
+SELECT * FROM asignatura;
+SELECT * FROM curso_escolar;
+SELECT * FROM departamento;
+SELECT * FROM grado;
+SELECT * FROM persona;
+SELECT * FROM profesor;
