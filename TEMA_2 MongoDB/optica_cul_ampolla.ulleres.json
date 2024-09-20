@@ -1,0 +1,128 @@
+[{
+  "_id": {
+    "$oid": "66b493f2ca5564bd1270c3be"
+  },
+  "marca": "Ray-Ban",
+  "model": "Wayfarer",
+  "color_muntura": "negre",
+  "tipus_muntura": "metàl·lica",
+  "color_vidres": "negre",
+  "grad_vidre_dret": 0.25,
+  "grad_vidre_esq": 0.25,
+  "preu": 179.99,
+  "proveidor": {
+      "_id": {
+        "$oid": "66b49118ca5564bd1270c3bc"
+      },
+        "nom": "Ray-Ban",
+        "adress": {
+              "num": "11",
+              "pis": "3",
+              "CP": "08002",
+              "ciutat": "Barcelona",
+              "pais": "Esp",
+              "carrer": "Roc Boronat",
+              "porta": "P"
+        },
+        "telf": "935241785",
+        "fax": "9352146532",
+        "NIF": "a65413145"
+  },
+  "comanda":{
+    "client":{
+      "_id": {
+        "$oid": "66b4e46aca5564bd1270c3c0"
+      },
+      "register_date": {
+        "$currentDate": true
+      },
+      "nom": "Xavier",
+      "adreça": {
+        "num": 3,
+        "pis": 9,
+        "porta": "A",
+        "CP": 8010,
+        "ciutat": "Barcelona",
+        "pais": "Esp",
+        "carrer": "Blah"
+      },
+      "telf": "654321456",
+      "email": "xavir@rivax.cat",
+      "client_recomana": {
+        "$oid": "66e810363caef9ea30b0cc38"
+      },
+      "empleat": {
+        "_id": {
+          "$oid": "66b5f3412420abddf8c1c619"
+        },
+        "name": "Antonio",
+        "cognom": "Barragan",
+        "nif": "654321654S"
+      }
+    }
+  }
+},
+
+{
+  "_id": {
+    "$oid": "66b49aa1ca5564bd1270c3bf"
+  },
+  "marca": "Oakley",
+  "model": "Radar EV",
+  "color_muntura": "cromat",
+  "tipus_muntura": "flotant",
+  "color_vidres": "polaritzades",
+  "grad_vidre_dret": 0,
+  "grad_vidre_esq": 0,
+  "preu": 78.59,
+  "proveidor": {
+      "_id": {
+        "$oid": "66b49228ca5564bd1270c3bd"
+      },
+        "nom": "Aflelu",
+        "adress": {
+            "num": "s/n",
+            "pis": "local",
+            "CP": "91245",
+            "ciutat": "Paris",
+            "pais": "França",
+            "carrer": "ulala"
+        },
+        "telf": "541354132",
+        "fax": "546215454",
+        "NIF": "b875468451"
+  },
+  "comanda":{
+    "client":{
+        "_id": {
+        "$oid": "66b5ec582420abddf8c1c614"
+        },
+        "register_date": {
+          "$currentDate": true
+        },
+        "nom": "Santi",
+        "adreça": {
+          "carrer": "Bleh",
+          "num": 24,
+          "pis": 4,
+          "porta": "Q",
+          "ciutat": "Baires",
+          "CP": 65432,
+          "pais": "Arg"
+        },
+        "telf": "005411245",
+        "email": "santir@rintas.ar",
+        "client_recomana": {
+          "$oid": "66b4e46aca5564bd1270c3c0"
+        }
+    },
+    "empleat": {
+        "_id": {
+          "$oid": "66b5f3412420abddf8c1c619"
+        },
+        "name": "Antonio",
+        "cognom": "Barragan",
+        "nif": "654321654S"
+    }
+  }
+}]

@@ -1,0 +1,32 @@
+1.- db.Restaurants.find({}) -- tots els documents dins de la col·lecció Restaurants.
+2.- db.Restaurants.find{}({restaurant_id:1, name:1, borough:1, cuisine:1}) -- conceptes específics dins de la col·lecció Restaurants.
+3.- db.Restaurants.find{}({restaurant_id:1, name:1, borough:1, cuisine:1, _id:0}) -- conceptes específics dins de la col·lecció Restaurants, excepte camp _id.
+4.- db.Restaurants.find{}({restaurant_id:1, name:1, borough:1, zip code:1, _id:0}) -- conceptes específics dins de la col·lecció Restaurants, excepte camp _id.
+5.- db.restaurants.find({borough:"Bronx"}) -- mostra tots els restaurants que estan en el Bronx.
+6.- db.restaurants.find({borough:"Bronx"}).límit(5) -- mostra només els 5 primers restaurants que estan en el Bronx.
+7.- db.restaurants.find({borough:"Bronx"}).skip(5) -- mostra tots els restaurants que estan en el Bronx, menys els 5 primers.
+8.- db.restaurants.find({score:{$gt: 90}}) -- restaurants amb un score major de 90.
+9.- db.restaurants.find({score:{$gt: 80, $lt: 100}}) -- restaurants amb score major de 80 i menor de 100.
+10.- db.restaurants.find({coord:{$lt: -95.754168}}) -- restaurants en una coordenada inferior a -95.754168.
+11.- db.restaurants.find({cuisine:{$ne: "American"},score:{$gt: 70}, coord:{$lt: -65.754168}}) -- restaurants on la cuina no sigui Americana, score major de 70 i coordenada inferior a -65.754168.
+12.- db.restaurants.find({cuisine:{$ne:"American"},score:{$gt: 70}, coord:{$lt: -65.754168}}) -- restaurants on la cuina no sigui Americana, score major de 70 i coordenada inferior a -65.754168, sense operador $and.
+13.- db.restaurants.find({cuisine:{$ne:"American"},borough:{$ne:"Brooklyn"},"grades.grade":"A"}).sort({cuisine: -1}) -- restaurants amb cuina no Americana, que no son de Brooklyn, amb algun grade A i ordenats en ordre descendent segons la cuisine.
+14.- db.Restaurants.find({name:{$regex:/^Wil/}},{restaurant_id: 1, name: 1, borough: 1, cuisine: 1}) -- conceptes específics de restaurants on comencin per les lletres Wil.
+15.- db.Restaurants.find({name:{$regex:/ces$/}},{restaurant_id: 1, name: 1, borough: 1, cuisine: 1}) -- conceptes específics de restaurants on acabin per les lletres ces.
+16.- db.Restaurants.find({name:{$regex:/reg/, $options:'i'}},{restaurant_id: 1, name: 1, borough: 1, cuisine: 1}) -- conceptes específics de restaurants que continguin les lletres Reg, indistintament de si són majúscules o minúscules.
+17.- db.restaurants.find({borough:"Bronx", $and:[{cuisine:"American"},{cuisine: "Chinese"}]}) -- restaurants del Bronx que fan cuina Americana o Xinesa.
+18.- db.restaurants.find({borough:{$in:["Staten Island", "Queens", "Bronx", "Brooklyn"]}},{restaurant_id: 1, name: 1, cuisine: 1}) -- conceptes específics per a restaurants dins uns districtes en particular.
+19.- db.restaurants.find({borough:{$in:["Staten Island", "Queens", "Bronx", "Brooklyn"]}},{restaurant_id: 1, name: 1, cuisine: 1}) -- conceptes específics per a restaurants que no estan en uns districtes en particular.
+20.- db.restaurants.find({score:{$lt:10}},{restaurant_id: 1, name: 1, cuisine: 1, borough: 1}) -- conceptes específics per a restaurants amb una nota inferior a 10.
+21.- db.restaurants.find({cuisine:"Seafood",cuisine:{$nin:["American", "Chinese"]},name:{$not:{$regex: "^Wil", $options: "i"}},},{restaurant_id: 1, name: 1, cuisine: 1, borough: 1}) -- restaurants que facin seafood, que no siguin de cuina americana ni xinesa i que el seu nom no comenci amb les lletres Wil.
+22.- db-restaurants.find({grade: "A", score: 10, date: "2014-08-11T00:00:00Z"},{restaurant_id: 1,name: 1}) -- conceptes específics per a restaurants amb un grade A, score 10 i ISODate 2014-08-11T00:00:00Z.
+23.- db-restaurants.find({grades.1.grade: "A", score: 9, date: "2014-08-11T00:00:00Z"},{restaurant_id: 1,name: 1}) -- conceptes específics per a restaurants amb un grade A en la segona posició de l'array grades, score 9 i ISODate 2014-08-11T00:00:00Z.
+24.- db-restaurants.find({coord:{$elemMatch:{$gte: 42, $lte: 52}}}),{restaurant_id: 1,name: 1, coord:1}) -- conceptes específics per a restaurants amb unes coordenades entre els valors 42 i 52.
+25.- db-restaurants.find().sort({nom: 1}) -- restaurants organitzats pel nom en ordre ascendent.
+26.- db-restaurants.find().sort({nom: -1}) -- restaurants organitzats pel nom en ordre descendent.
+27.- db-restaurants.find().sort({cuisine: 1, borough: -1}) -- restaurants organitzats segons la cuina per ordre ascendent i pel barri en ordre descendent.
+28.- db.restaurants.find({"address.street":{$exists: true}}) -- restaurants que la direcció conté el carrer.
+29.- db.restaurants.find({coord:{ $type: "double"}}) -- restaurants que el valor de la coordenada del camp coord és de tipus double.
+30.- db.restaurants.find({$expr:{$eq:[{$mod:["$score", 7]}, 0]}},{restaurant_id: 1, name: 1, grade: 1}) -- conceptes específics per a aquells restaurants que retornen un valor 0 de residu al dividir algun dels seus score entre 7.
+31.- db-restaurants.find({name:{$regex:/mon/, $options:'i'}},{restaurant_id: 1, name: 1, borough: 1, cuisine: 1, coord: 1})) -- conceptes específics per a restaurants que continguin les lletres mod en qualsevol part del seu nom.
+32.- db-restaurants.find({name:{$regex:/^Mad/}},{restaurant_id: 1, name: 1, borough: 1, cuisine: 1, coord: 1})) -- conceptes específics per a restaurants que les tres primeres lletres del seu nom siguin Mad.
