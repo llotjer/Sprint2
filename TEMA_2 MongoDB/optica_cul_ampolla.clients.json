@@ -24,7 +24,14 @@
     "_id": {
     "$oid": "66bc80062420abddf8c1c63b"
   },
-    "ulleres":{
+  "ulleres": {
+      "_id": {
+        "$oid": "66b493f2ca5564bd1270c3be"
+      }
+  }
+},
+
+{"ulleres":{
       "_id": {
         "$oid": "66b493f2ca5564bd1270c3be"
       },
@@ -54,8 +61,10 @@
             "fax": "9352146532",
             "NIF": "a65413145"
                 }
-    },
-    "empleat":{
+    }
+  },
+
+{"empleat":{
         "_id": {
           "$oid": "66b5f3412420abddf8c1c619"
         },
@@ -63,8 +72,7 @@
         "cognom": "Barragan",
         "nif": "654321654S"
     }
-  }
-},
+  },
 
 
 {
