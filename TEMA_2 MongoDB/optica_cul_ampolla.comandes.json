@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "66bc80062420abddf8c1c63b"
+  },
+  "clientId": {
+    "$oid": "66b4e46aca5564bd1270c3c0"
+  },
+  "ulleresId": {
+    "$oid": "66b493f2ca5564bd1270c3be"
+  },
+  "quantitat": 1,
+  "empleatId": {
+    "$oid": "66b5f3412420abddf8c1c619"
+  }
+},
+{
+  "_id": {
+    "$oid": "66bc852a2420abddf8c1c645"
+  },
+  "clientId": {
+    "$oid": "66b5ec582420abddf8c1c614"
+  },
+  "ulleresId": {
+    "$oid": "66b49aa1ca5564bd1270c3bf"
+  },
+  "quantitat": 1,
+  "empleatId": {
+    "$oid": "66b5f3412420abddf8c1c619"
+  }
+}]

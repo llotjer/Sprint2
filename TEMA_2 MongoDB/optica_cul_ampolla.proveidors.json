@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "66b49118ca5564bd1270c3bc"
+  },
+  "nom": "Ray-Ban",
+  "adress": {
+    "num": "11",
+    "pis": "3",
+    "CP": "08002",
+    "ciutat": "Barcelona",
+    "pais": "Esp",
+    "carrer": "Roc Boronat",
+    "porta": "P"
+  },
+  "telf": "935241785",
+  "fax": "9352146532",
+  "NIF": "a65413145"
+},
+{
+  "_id": {
+    "$oid": "66b49228ca5564bd1270c3bd"
+  },
+  "nom": "Aflelu",
+  "adress": {
+    "num": "s/n",
+    "pis": "local",
+    "CP": "91245",
+    "ciutat": "Paris",
+    "pais": "França",
+    "carrer": "ulala"
+  },
+  "telf": "541354132",
+  "fax": "546215454",
+  "NIF": "b875468451"
+}]
